@@ -18,8 +18,9 @@ WIN_COMBINATIONS = [
 def won?(board)
 
   #empty_board = board.all? { |i| i = " " }
-  WIN_COMBINATIONS.each do |index|
-    return true if board[0] == board[1] && board[0] == board[2]
+  WIN_COMBINATIONS.each do |combo|
+    position_taken?(board, combo[0]) &&
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[0]] == board[combo[2]]
   end
-  false
 end
