@@ -18,14 +18,7 @@ WIN_COMBINATIONS = [
 def won?(board)
 
   #empty_board = board.all? { |i| i = " " }
-  WIN_COMBINATIONS.each do |combo|
-    win_combo = WIN_COMBINATIONS[combo]
-
-    x_win = win_combo.all? { |position| board[position] == "X" }
-    o_win = win_combo.all? { |position| board[position] == "O" }
-
-    if x_win == true || o_win == true
-      return win_combo
-    end
+  WIN_COMBINATIONS.each do |three_in_a_row|
+    !(three_in_a_row - board).empty? ? true : false
   end
 end
