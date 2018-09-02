@@ -20,10 +20,11 @@ def won?(board)
   #empty_board = board.all? { |i| i = " " }
   WIN_COMBINATIONS.each { |combo| win_combo = WIN_COMBINATIONS[combo] }
 
-    if true win_combo.all? { |position| board[position] == "O" || board[position] == "X" }
+    x_win = win_combo.all? { |position| board[position] == "X" }
+    o_win = win_combo.all? { |position| board[position] == "O" }
+
+    if x_win == true || o_win == true
       return win_combo
-    else
-      false
     end
   end
 end
