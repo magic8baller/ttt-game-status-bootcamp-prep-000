@@ -19,6 +19,7 @@ def won?(board)
 
   #empty_board = board.all? { |i| i = " " }
   WIN_COMBINATIONS.each do |three_in_a_row|
-    !(three_in_a_row - board).empty? ? true : false
+    return true if (three_in_a_row - board).empty?
   end
+  return false
 end
