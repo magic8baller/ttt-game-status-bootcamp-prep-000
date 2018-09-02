@@ -18,8 +18,8 @@ WIN_COMBINATIONS = [
 def won?(board)
 
   #empty_board = board.all? { |i| i = " " }
-  WIN_COMBINATIONS.each do |three_in_a_row|
-    return true if (three_in_a_row - board) == []
+  WIN_COMBINATIONS.each do |index|
+    return true if board[0] == board[1] && board[0] == board[2]
   end
-  return false
+  false
 end
