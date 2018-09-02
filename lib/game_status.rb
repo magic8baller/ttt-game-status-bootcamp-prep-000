@@ -24,6 +24,9 @@ def won?(board)
     o_win = win_combo.all? { |position| board[position] == "O" }
 
     if x_win == true || o_win == true
-      return win_combo
+        return win_combo
+    else
+      false
     end
+  end
 end
