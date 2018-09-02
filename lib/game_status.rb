@@ -20,7 +20,7 @@ def won?(board)
   #empty_board = board.all? { |i| i = " " }
   WIN_COMBINATIONS.each.with_index do |win_combo, i|
     win_index = win_combo[i]
-  
+
     position = board[win_index_1]
     position_2 = board[win_index_2]
     position_3 = board[win_index_3]
