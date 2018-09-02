@@ -28,5 +28,5 @@ def won?(board)
       return win_combo
     else !position_taken?(board, index) return false
     end
-    
+
 end
