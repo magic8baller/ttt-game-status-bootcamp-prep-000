@@ -18,10 +18,8 @@ WIN_COMBINATIONS = [
 def won?(board)
 
   #empty_board = board.all? { |i| i = " " }
-  WIN_COMBINATIONS.each.with_index do |win_combo|
-    win_index_1 = win_combo[0]
-    win_index_2 = win_combo[1]
-    win_index_3 = win_combo[2]
+  WIN_COMBINATIONS.each.with_index do |win_combo, i|
+    win_index = win_combo[i]
 
     position_1 = board[win_index_1]
     position_2 = board[win_index_2]
