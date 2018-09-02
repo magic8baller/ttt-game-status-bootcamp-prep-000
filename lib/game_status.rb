@@ -3,6 +3,16 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+=begin
+makes return false for empty && false for draw
+
+WIN_COMBINATIONS.each do |three_in_a_row|
+  return true if (three_in_a_row - board) == []
+end
+return false
+
+=end
+
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
   [0, 1, 2], #top row
@@ -18,8 +28,14 @@ WIN_COMBINATIONS = [
 def won?(board)
 
   #empty_board = board.all? { |i| i = " " }
-  WIN_COMBINATIONS.each do |three_in_a_row|
-    return true if (three_in_a_row - board) == []
+  WIN_COMBINATIONS.each do |combo|
+    win_combo = WIN_COMBINATIONS[combo]
+
+    x_win = win_combo.all? { |position| board[position] == "X" }
+    o_win = win_combo.all? { |position| board[position] == "O" }
+
+    if x_win == true || o_win == true
+      return win_combo
+    end
   end
-  return false
 end
