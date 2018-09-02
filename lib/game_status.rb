@@ -26,7 +26,6 @@ def won?(board)
 
     if x_win == true || o_win == true
       return win_combo
-    else !position_taken?(board, index) return false
     end
   end
 end
